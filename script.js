@@ -14,21 +14,21 @@ ScrollTrigger.matchMedia({
 
         timeline.to('#xbox360', {
             top: '150%',
-            left: '10%',
+            left: '15%',
             rotation: 360,
             ease: 'none',
         });
 
         timeline.to('#controle', {
             top: '150%',
-            left: '32%',
+            left: '36%',
             rotation: 410,
             ease: 'none',
         }, "<");
 
         timeline.to('#rewards', {
             top: '150%',
-            left: '0%',
+            left: '1%',
             rotation: 310,
             ease: 'none',
         }, "<");
@@ -75,4 +75,17 @@ ScrollTrigger.matchMedia({
 window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
     nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+const hamburger = document.getElementById("logotipo");
+const menu = document.querySelector(".menu");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("open");
+});
+
+menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("open");
+    });
 });

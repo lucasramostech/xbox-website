@@ -9,6 +9,11 @@
 html, body {
     height: 100%;
     width: 100%;
+    scroll-behavior: smooth;
+}
+
+#hero, #about, #games {
+    scroll-margin-top: 10vh;
 }
 
 ::-webkit-scrollbar { 
@@ -32,7 +37,9 @@ a {
 #main-div {
     width: 100%;
     min-height: 100vh;
-    background-color: rgb(23, 24, 27);
+    background-image: url('Assets/fundo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
     overflow-x: hidden;
 }
 
@@ -41,20 +48,21 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 100px;
+    padding-inline: 5%;
     width: 100%;
     height: 10vh;
     z-index: 99;
-    background: rgb(61, 100, 64);
     transition: 0.3s;
     animation: navAnima 1s ease forwards;
+    background: black;
+    
 }
 
 .nav-container.scrolled {
-    background: rgba(40, 70, 40, 0.9);
+    background: rgba(30, 52, 39, 0.9);
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .nav-container img {
@@ -106,14 +114,14 @@ a {
 }
 
 .hero h1 {
-    font-size: 25vw;
+    font-size: 20vw;
     color: #FFFFFF;
     letter-spacing: -0.03em;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 #xbox360 {
-    width: 22%;
+    width: 17%;
     z-index: 11;
     position: absolute;
     top: 50%;
@@ -150,7 +158,7 @@ a {
     display: flex;
     width: 100%;
     height: 100vh;
-    background: rgb(17, 17, 18);
+    background: rgb(4, 4, 4);
     overflow: hidden;
 }
 
@@ -186,12 +194,17 @@ a {
 }
 
 .three {
-    align-items: center;
+    padding-top: 30vh;
     display: flex;
-    justify-content: space-between;
-    padding-inline: 10%;
-    height: 100vh;
-    background: rgb(31, 32, 32);
+    flex-wrap: wrap;
+    gap: 20vh 20px;
+    padding-inline: 20%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 14, 7) 100%);
+}
+
+.three > * {
+    flex: 0 0 calc(33.333% - 14px);
 }
 
 .card {
@@ -199,7 +212,7 @@ a {
     flex-direction: column;
     align-items: center;
     width: 30%;
-    background: #0f0f0f;
+    background: #212121;
     border-radius: 28px;
     height: fit-content;
     padding-bottom: 50px;
@@ -259,9 +272,23 @@ a {
     background: #6dc020;
 }
 
+
+footer {
+    background: rgb(0, 14, 7);
+}
+
+footer img {
+    width: 100%;
+    height: 25vh;
+    filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(4);
+    margin: 0;
+
+}
+
+/* talets e ipads */
 @media (max-width: 1024px) {
     .nav-container {
-        padding-inline: 40px;
+        padding-inline: 5%;
     }
 
     .right-side h2 {
@@ -273,13 +300,15 @@ a {
     }
 
     .three {
-        padding-inline: 5%;
+        padding-inline: 10%;
     }
 }
 
+
+/* Celular/moba */
 @media (max-width: 768px) {
     .nav-container {
-        padding-inline: 20px;
+        padding-inline: 5%;
     }
 
     #logotipo {
@@ -293,7 +322,7 @@ a {
         top: 10vh;
         left: 0;
         width: 100%;
-        background: rgba(7, 20, 10, 0.97);
+        background: rgba(0, 0, 0, 0.97);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         padding: 24px 20px;
@@ -311,6 +340,10 @@ a {
 
     .hero {
         height: 100svh;
+    }
+
+    .hero h1 {
+        font-size: 25vw;
     }
 
     #xbox360 {
@@ -362,14 +395,23 @@ a {
     }
 
     .three {
+        padding-top: 20vh !important;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 20vh;
         height: auto;
         padding: 100px 10% 60px;
-        gap: 20vh;
-        align-items: center;
     }
 
     .card {
         width: 85%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+
+    .three {
+        padding-inline: 15%;
     }
 }
