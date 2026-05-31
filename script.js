@@ -1,4 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
+window.scrollTo(0, 0);
 
 //Computadores e monitores padrões
 ScrollTrigger.matchMedia({
