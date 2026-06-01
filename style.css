@@ -37,7 +37,7 @@ a {
 #main-div {
     width: 100%;
     min-height: 100vh;
-    background-image: url('Assets/fundo.png');
+    background-image: url('Assets/fundo.webp');
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     overflow-x: hidden;
