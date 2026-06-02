@@ -1,8 +1,9 @@
+
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
 window.scrollTo(0, 0);
 
-//Computadores e monitores padrões
+//GSAP para animação do scroll computadores e mobile 
 ScrollTrigger.matchMedia({
     "(min-width: 769px)": function () {
         var timeline = gsap.timeline({
@@ -74,6 +75,7 @@ ScrollTrigger.matchMedia({
 });
 
 
+// mini-animação do nav
 window.addEventListener("scroll", () => {
     const nav = document.querySelector("nav");
     nav.classList.toggle("scrolled", window.scrollY > 50);
@@ -90,4 +92,20 @@ menu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
         menu.classList.remove("open");
     });
+});
+
+
+
+// Animação do scroll
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.hero, .card').forEach(el => {
+    revealObserver.observe(el);
 });
