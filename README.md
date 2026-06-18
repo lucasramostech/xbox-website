@@ -2,6 +2,10 @@
 
 Site simples da Xbox feito para estudo de front-end. Landing page responsiva com animações de scroll.
 
+## Demo
+
+🔗 [Ver projeto online](https://lucasramostech.github.io/xbox-website/)
+
 ## Tecnologias
 
 - HTML
