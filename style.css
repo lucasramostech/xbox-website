@@ -10,9 +10,10 @@ html, body {
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;
+    background: #111111;
 }
 
-#hero, #about, #games {
+#hero, #about, #highlights, #games {
     scroll-margin-top: 10vh;
 }
 
@@ -207,6 +208,8 @@ a {
     flex: 0 0 calc(33.333% - 14px);
 }
 
+
+
 .card {
     display: flex;
     flex-direction: column;
@@ -216,6 +219,7 @@ a {
     height: fit-content;
     padding-bottom: 50px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
 }
 
 .card:hover {
@@ -393,21 +397,118 @@ footer img {
     }
 }
 
-@media (min-width: 500px) and (max-width: 767px) {
+
+
+@media (min-width: 500px) and (max-width: 768px) {
 
     .three {
         padding-inline: 20%;
     }
 }
 
-/* Animação final do appear ;> */
+
 .hero, .card {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
+
+
 .hero.visible, .card.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* Seção dos destacados highlights */
+
+#highlights{
+    height: 80vh;
+    display: flex;
+    background-color: #0b0f0b;
+    overflow: hidden;
+}
+
+.low, .high {
+    width: 50%;
+}
+.low {
+    margin-top: 10vh;
+}
+
+.low p, .low h2, .low h1 {
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 70%;
+    margin: auto;
+    margin-top: 10px; 
+}
+
+.low h1 {
+    font-size: 5vw;
+    color: lightgreen;
+    font-style: italic;
+    
+}
+.low h2 {
+    font-size: 3vw;
+}
+
+.high {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #111111 100%), url('Assets/gta_background.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.6s ease;
+}
+
+.high h1 {
+    font-family: 'Rock Salt', cursive;
+    font-size: clamp(1rem, 3vw, 2.8rem);
+    color: #fff;
+    text-align: center;
+    text-shadow: 10px 3px 0px #111;
+    letter-spacing: 2px;
+    padding-inline: 1rem;
+}
+
+@media (max-width: 767px){
+
+    #highlights {
+        display: block;
+        height: auto;
+        margin: auto;
+        background-size: contain !important;
+        background-position: center !important;
+    }
+
+    .high {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .low, .high {
+        width: 100%;
+    }
+
+    .high {
+        height: 50vh;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        
+
+    }
+
+    .high h1 {
+        font-size: clamp(1rem, 6vw, 1.8rem);
+        text-align: center;
+    }
+
+
+
 }

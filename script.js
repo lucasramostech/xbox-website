@@ -109,3 +109,30 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.hero, .card').forEach(el => {
     revealObserver.observe(el);
 });
+
+
+
+// Carrosel
+
+const hero = document.querySelector(".high")
+const txt = document.querySelector(".txt")
+let vav = ["Assets/doom_background.jpeg", "Assets/halo_background.jpeg", "Assets/rdr_background.jpg", "Assets/forza_background.jpg",]
+let names = ["Doom Eternal", "Halo Infinite", "Red Dead Redemption 2", "Forza Horizon"]; let cont = 0
+
+
+setInterval(() => {
+
+    if (cont == 4){cont = 0}
+
+    const idx = cont
+    hero.style.opacity = 0
+
+    setTimeout(() => {
+        hero.style.backgroundImage = `linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #111111 100%), url('${vav[idx]}')`
+        hero.style.backgroundSize = "cover"
+        txt.innerText = names[idx]
+        hero.style.opacity = 1
+    }, 600)
+
+    cont++
+}, 10000)
